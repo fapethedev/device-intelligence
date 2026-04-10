@@ -1,4 +1,5 @@
 import React from "react"
+import { Metadata } from "next";
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -8,6 +9,49 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
+
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Device Intelligence`,
+    default: "Device Intelligence",
+    absolute: "Device Intelligence"
+  },
+  description: "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
+  applicationName: "Device Intelligence",
+  publisher: "Fapethedev",
+  creator: "Fapethedev",
+  manifest: "/manifest.webmanifest",
+  openGraph: {
+    title: {
+      template: `%s | Device Intelligence`,
+      default: "Device Intelligence",
+      absolute: "Device Intelligence"
+    },
+    description: "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
+    type: "website",
+},
+  twitter: {
+    title: {
+      template: `%s | Device Intelligence`,
+      default: "Device Intelligence",
+      absolute: "Device Intelligence"
+    },
+    description: "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
+      creator: "Fapethedev",
+      card: "summary",
+      site: "Device Intelligence",
+  },
+  appleWebApp: {
+    capable: true,
+      statusBarStyle: "default",
+      title: "Device Intelligence",
+      startupImage: "/icon-512x512.png",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
 
 export default function RootLayout({
   children,
