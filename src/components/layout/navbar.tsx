@@ -20,15 +20,10 @@ export function Navbar() {
   
   // Effects for the "resize on scroll" behavior
   const height = useTransform(scrollY, [0, 100], [80, 60]);
-  const backgroundColor = useTransform(
-    scrollY, 
-    [0, 100], 
-    ["rgba(3, 7, 18, 0)", "rgba(235,237,238,0.8)"]
-  );
 
   return (
     <motion.header
-      style={{ height, backgroundColor }}
+      style={{ height }}
       className="w-full fixed top-0 left-0 right-0 z-50 flex flex-row items-center backdrop-blur-md transition-colors duration-300"
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
