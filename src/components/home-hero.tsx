@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { BookOpen, Cpu, Fingerprint, Lock, Scan, Shield, ShieldCheck, Zap } from "lucide-react";
+import { Cpu, Fingerprint, Lock, Scan, Shield, ShieldCheck, Zap } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 
 import { Button } from "@/components/ui/button";
@@ -60,14 +60,8 @@ export default function HomeHero() {
               Scan Now
             </Button>
           </Link>
-          <Link href="/docs">
-            <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg font-bold border-primary/20 bg-background/50 backdrop-blur-md">
-              <BookOpen />
-              Documentation
-            </Button>
-          </Link>
-          <Link href="https://github.com">
-            <Button size="lg" variant="ghost" className="gap-2 h-14 px-8 text-lg font-bold">
+          <Link href="https://github.com/fapethedev/device-intelligence" target="_blank">
+            <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg font-bold backdrop-blur-md">
               <FaGithub />
               GitHub
             </Button>
