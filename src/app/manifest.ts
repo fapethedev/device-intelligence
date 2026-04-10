@@ -1,14 +1,11 @@
 import {MetadataRoute} from "next";
-import {getTranslations} from "next-intl/server";
-
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
-
-
 	return {
 		id : "di-fingerprinter",
 		name: "Device Intelligence",
 		short_name: "DI",
+    description: "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
 		start_url: "/",
 		display: "standalone",
 		display_override: ["window-controls-overlay"],

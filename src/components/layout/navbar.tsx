@@ -1,18 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import Image from "next/image"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ShieldCheck, Zap, Info, BookOpen, Scan } from "lucide-react";
+import { Zap, Info, Scan } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Accueil", icon: Zap },
-  { href: "/scanner", label: "ClientJS Scan", icon: Scan },
   { href: "/about", label: "À propos", icon: Info },
-  { href: "/docs", label: "Documentation", icon: BookOpen },
 ];
 
 export function Navbar() {
@@ -24,20 +23,23 @@ export function Navbar() {
   const backgroundColor = useTransform(
     scrollY, 
     [0, 100], 
-    ["rgba(3, 7, 18, 0)", "rgba(3, 7, 18, 0.8)"]
+    ["rgba(3, 7, 18, 0)", "rgba(235,237,238,0.8)"]
   );
-  const backdropBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(12px)"]);
-  const borderOpacity = useTransform(scrollY, [0, 100], [0, 0.1]);
 
   return (
     <motion.header
-      style={{ height, backgroundColor, backdropBlur }}
-      className="fixed top-0 left-0 right-0 z-50 flex items-center border-b border-primary/0 transition-colors duration-300"
+      style={{ height, backgroundColor }}
+      className="w-full fixed top-0 left-0 right-0 z-50 flex flex-row items-center backdrop-blur-md transition-colors duration-300"
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-            <ShieldCheck className="text-primary w-6 h-6" />
+          <div className="relative h-12 w-12">
+            <Image
+              src="/icon-transparent.png"
+              alt="Logo"
+              fill
+              className="object-cover overflow-hidden"
+            />
           </div>
           <span className="font-black text-xl tracking-tighter uppercase hidden sm:block">
             Finger<span className="text-primary">Printer</span>
@@ -52,7 +54,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full flex items-center gap-2",
+                  "whitespace-nowrap relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full flex items-center gap-2",
                   isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -76,8 +78,9 @@ export function Navbar() {
               <Scan size={16} />
               Lancer un Scan
             </Button>
-            <Button size="icon" className="sm:hidden rounded-full">
+            <Button aria-label="scanner" size="icon" className="sm:hidden rounded-full">
                <Scan size={18} />
+              <span className="sr-only"></span>
             </Button>
           </Link>
         </div>
