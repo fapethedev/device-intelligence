@@ -568,7 +568,7 @@ export default function ClientJsExplorer() {
                 >
                 <Card className="h-full border-primary/10 bg-card/50 backdrop-blur-md hover:border-primary/30 transition-all group overflow-hidden relative">
                     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                        {React.cloneElement(section.icon as React.ReactElement, { size: 64 })}
+                        {React.cloneElement(section.icon as React.ReactElement<{ size: number }>, { size: 64 })}
                     </div>
                     <CardHeader className="pb-2">
                     <div className="flex justify-between items-start">
