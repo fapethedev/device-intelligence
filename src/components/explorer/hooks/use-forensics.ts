@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from "react";
 
 import { ClientData, IpData } from "@/components/explorer/types";
 
+const CACHE_KEY = "di_ip_cache";
+
 export function useForensics() {
   const [data, setData] = useState<ClientData | null>(null);
   const [ipData, setIpData] = useState<IpData | null>(null);
@@ -11,11 +13,28 @@ export function useForensics() {
     if (typeof window === "undefined") return;
     setLoading(true);
 
-    try {
-      const [clientJsModule, ipRes] = await Promise.all([
-        import("clientjs"),
-        fetch("https://ipapi.co/json/").then(res => res.json())
-      ]);
+    let ipPromise;
+
+      try {
+        const cachedData = sessionStorage.getItem(CACHE_KEY);
+
+        const parsed = cachedData ? JSON.parse(cachedData) : null;
+
+        ipPromise = parsed
+          ? Promise.resolve(parsed)
+          : fetch("https://ipapi.co/json/").then(res => res.json());
+
+        const [clientJsModule, ipRes] = await Promise.all([
+          import("clientjs"),
+          ipPromise
+        ]).catch(err => {
+          console.error("Failed to load resources:", err);
+          throw err;
+        });
+
+      if (!cachedData) {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify(ipRes));
+      }
 
       const { ClientJS } = clientJsModule;
       const client = new ClientJS();
