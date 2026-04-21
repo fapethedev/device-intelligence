@@ -2,6 +2,7 @@ import type {NextConfig} from "next";
 
 import { spawnSync } from "node:child_process";
 import withSerwistInit from "@serwist/next";
+import createNextIntlPlugin from "next-intl/plugin";
 
 const revision = spawnSync("git", ["rev-parse", "HEAD"], { encoding: "utf-8" }).stdout ?? crypto.randomUUID();
 
@@ -83,4 +84,10 @@ const nextConfig: NextConfig = {
 
 const serwistConfig = withSerwist(nextConfig);
 
-export default serwistConfig;
+const withNextIntl = createNextIntlPlugin({
+  experimental: {
+    createMessagesDeclaration: './messages/en.json'
+  }
+});
+
+export default withNextIntl(serwistConfig);
