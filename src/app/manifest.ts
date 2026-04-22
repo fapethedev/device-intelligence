@@ -1,11 +1,19 @@
 import {MetadataRoute} from "next";
+import {getTranslations} from "next-intl/server";
 
 export default async function manifest(): Promise<MetadataRoute.Manifest> {
+  const locale = "en";
+
+  const t = await getTranslations({
+    namespace: "Manifest",
+    locale
+  });
+
 	return {
 		id : "di-fingerprinter",
-		name: "Device Intelligence",
+		name: t("title"),
 		short_name: "DI",
-    description: "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
+    description: t("description"),
 		start_url: "/",
 		display: "standalone",
 		display_override: ["window-controls-overlay"],
@@ -60,9 +68,9 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
 		],
 		shortcuts: [
 			{
-				name: "Scanner",
-				short_name: "Scan",
-				description: "The fingerprinter scanner",
+				name: t("shortcuts.scanner.name"),
+				short_name: t("shortcuts.scanner.shortName"),
+				description: t("shortcuts.scanner.description"),
 				url: "/scanner",
 				icons: [
 					{
