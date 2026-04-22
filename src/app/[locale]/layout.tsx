@@ -1,5 +1,7 @@
 import React from "react"
 import { Metadata } from "next";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -9,6 +11,8 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
+import { routing } from "@/i18n/routing"
+import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
   title: {
@@ -52,12 +56,24 @@ export const metadata: Metadata = {
   },
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode,
+  params: Promise<{locale: string}>
 }>) {
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+
+  setRequestLocale(locale);
+
   return (
     <html
       lang="en"
@@ -65,6 +81,7 @@ export default function RootLayout({
       className={cn("antialiased", "font-mono", jetbrainsMono.variable, spaceGroteskHeading.variable)}
     >
       <body className="flex flex-col min-h-screen">
+      <NextIntlClientProvider>
         <ThemeProvider>
           <TooltipProvider>
             <Navbar />
@@ -75,6 +92,7 @@ export default function RootLayout({
             <Toaster position="top-center" expand={true} richColors />
           </TooltipProvider>
         </ThemeProvider>
+      </NextIntlClientProvider>
       </body>
     </html>
   )
