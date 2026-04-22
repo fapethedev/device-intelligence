@@ -1,7 +1,8 @@
 import React from "react"
 import { Metadata } from "next";
+import { notFound } from "next/navigation"
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getMessages } from "next-intl/server";
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -12,7 +13,6 @@ import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { routing } from "@/i18n/routing"
-import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
   title: {
@@ -74,14 +74,19 @@ export default async function RootLayout({
 
   setRequestLocale(locale);
 
+  const messages = await getMessages();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={cn("antialiased", "font-mono", jetbrainsMono.variable, spaceGroteskHeading.variable)}
     >
       <body className="flex flex-col min-h-screen">
-      <NextIntlClientProvider>
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messages}
+      >
         <ThemeProvider>
           <TooltipProvider>
             <Navbar />
