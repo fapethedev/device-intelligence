@@ -1,6 +1,6 @@
 {
   "name": "di-fingerprinter",
-  "version": "v2026.3.0.0",
+  "version": "v2026.3.1.0",
   "type": "module",
   "private": true,
   "scripts": {

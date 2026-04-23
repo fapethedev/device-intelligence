@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { ExternalLink, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { FaFacebook, FaGithub, FaLinkedin, FaReact, FaTwitter } from "react-icons/fa6";
@@ -10,7 +11,6 @@ import { useTranslations } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { Link } from "@/i18n/navigation";
 
 const techStack = [
   { name: "Next.js 16", icon: SiNextdotjs, color: "text-black" },
@@ -43,6 +43,7 @@ export default function AboutContent() {
     },
   ];
 
+  // @ts-ignore
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
