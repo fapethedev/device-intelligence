@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ShieldCheck, RefreshCw } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { ShareDropdown } from "@/components/explorer/components/share-dropdown";
@@ -31,6 +32,8 @@ export function ExplorerHeader({
   onExportPdf,
   onExportImage,
 }: ExplorerHeaderProps) {
+  const t = useTranslations("Scanner.header");
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: -20 }}
@@ -38,10 +41,14 @@ export function ExplorerHeader({
       className="flex justify-between items-end flex-wrap gap-4"
     >
       <div>
-        <h2 className="font-heading text-4xl font-black tracking-tight uppercase">System <span className="text-primary">Forensics</span></h2>
+        <h2 className="font-heading text-4xl font-black tracking-tight uppercase">
+          {t.rich("title", {
+            span: (chunks) => <span className="text-primary">{chunks}</span>
+          })}
+        </h2>
         <p className="text-muted-foreground flex items-center gap-2">
           <ShieldCheck size={16} className="text-primary" />
-          Deep kernel, Network and OS detection using heuristic analysis.
+          {t("description")}
         </p>
       </div>
       <div className="flex gap-2 flex-wrap">
@@ -56,7 +63,7 @@ export function ExplorerHeader({
         />
         <Button onClick={onRefresh} variant="default" className="gap-2 shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
           <RefreshCw className={loading ? "animate-spin" : ""} size={16} />
-          Scan
+          {t("scanBtn")}
         </Button>
       </div>
     </motion.div>

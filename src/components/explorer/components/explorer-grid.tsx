@@ -5,6 +5,7 @@ import {
   Zap, MapPin, Globe, Fingerprint, Laptop, 
   Smartphone, Monitor, ShieldCheck, FileCode, Map as MapIcon 
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
@@ -31,42 +32,44 @@ interface ExplorerGridProps {
 }
 
 export function ExplorerGrid({ data, ipData }: ExplorerGridProps) {
+  const t = useTranslations("Scanner.grid");
+
   const sections: Section[] = [
     {
-      title: "Network & Connection",
+      title: t("sections.network"),
       icon: <Zap className="text-primary w-5 h-5" />,
       items: [
-        { label: "IP Address", value: ipData?.ip, badge: true },
-        { label: "Provider (ISP)", value: ipData?.org, truncate: true },
-        { label: "ASN", value: ipData?.asn },
-        { label: "IP Version", value: ipData?.version },
+        { label: t("labels.ip"), value: ipData?.ip, badge: true },
+        { label: t("labels.provider"), value: ipData?.org, truncate: true },
+        { label: t("labels.asn"), value: ipData?.asn },
+        { label: t("labels.version"), value: ipData?.version },
       ]
     },
     {
-      title: "Geo Location",
+      title: t("sections.geo"),
       icon: <MapPin className="text-primary w-5 h-5" />,
       items: [
-        { label: "Location", value: `${ipData?.city}, ${ipData?.region} (${ipData?.country_name})` },
-        { label: "Postal Code", value: ipData?.postal },
-        { label: "Coordinates", value: `${ipData?.latitude}, ${ipData?.longitude}` },
-        { label: "In EU", value: ipData?.in_eu ? "Yes" : "No" },
+        { label: t("labels.location"), value: `${ipData?.city}, ${ipData?.region} (${ipData?.country_name})` },
+        { label: t("labels.postal"), value: ipData?.postal },
+        { label: t("labels.coordinates"), value: `${ipData?.latitude}, ${ipData?.longitude}` },
+        { label: t("labels.inEu"), value: ipData?.in_eu ? t("values.yes") : t("values.no") },
       ],
       actions: (
         <Dialog>
           <DialogTrigger asChild>
             <Button size="sm" variant="outline" className="gap-2 h-7 text-[10px] uppercase font-bold tracking-widest bg-primary/5 border-primary/20 hover:bg-primary/10">
               <MapIcon size={12} className="text-primary" />
-              Carte
+              {t("map.btn")}
             </Button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-2xl bg-card border-primary/20 p-0 overflow-hidden backdrop-blur-xl">
             <DialogHeader className="p-6 pb-2">
               <DialogTitle className="flex items-center gap-2">
                 <MapPin className="text-primary" />
-                Localisation Détectée
+                {t("map.title")}
               </DialogTitle>
               <DialogDescription>
-                Visualisation géographique de l'IP {ipData?.ip}
+                {t("map.description", { ip: ipData?.ip || "" })}
               </DialogDescription>
             </DialogHeader>
             <div className="p-6 pt-0">
@@ -77,73 +80,73 @@ export function ExplorerGrid({ data, ipData }: ExplorerGridProps) {
       )
     },
     {
-      title: "Regional Context",
+      title: t("sections.regional"),
       icon: <Globe className="text-primary w-5 h-5" />,
       items: [
-        { label: "Capital", value: ipData?.country_capital },
-        { label: "Currency", value: `${ipData?.currency_name} (${ipData?.currency})` },
-        { label: "Calling Code", value: `+${ipData?.country_calling_code}` },
-        { label: "Languages", value: ipData?.languages, truncate: true },
+        { label: t("labels.capital"), value: ipData?.country_capital },
+        { label: t("labels.currency"), value: `${ipData?.currency_name} (${ipData?.currency})` },
+        { label: t("labels.callingCode"), value: `+${ipData?.country_calling_code}` },
+        { label: t("labels.languages"), value: ipData?.languages, truncate: true },
       ]
     },
     {
-      title: "Identity & Fingerprint",
+      title: t("sections.identity"),
       icon: <Fingerprint className="text-primary w-5 h-5" />,
       items: [
-        { label: "Device Hash", value: data?.fingerprint, badge: true },
-        { label: "Browser Language", value: data?.language },
-        { label: "Timezone", value: ipData?.timezone || data?.timeZone },
-        { label: "UTC Offset", value: ipData?.utc_offset },
+        { label: t("labels.deviceHash"), value: data?.fingerprint, badge: true },
+        { label: t("labels.browserLanguage"), value: data?.language },
+        { label: t("labels.timezone"), value: ipData?.timezone || data?.timeZone },
+        { label: t("labels.utcOffset"), value: ipData?.utc_offset },
       ]
     },
     {
-      title: "OS Deep Dive",
+      title: t("sections.os"),
       icon: <Laptop className="text-primary w-5 h-5" />,
       items: [
-        { label: "System", value: `${data?.os} ${data?.osVersion}` },
-        { label: "Architecture", value: data?.cpu || "x64/ARM" },
-        { label: "Desktop Mode", value: data?.isDesktop ? "Yes" : "No" },
-        { label: "Platform", value: data?.isWindows ? "Windows" : data?.isMac ? "macOS" : data?.isLinux ? "Linux" : "Other" },
+        { label: t("labels.system"), value: `${data?.os} ${data?.osVersion}` },
+        { label: t("labels.architecture"), value: data?.cpu || "x64/ARM" },
+        { label: t("labels.desktopMode"), value: data?.isDesktop ? t("values.yes") : t("values.no") },
+        { label: t("labels.platform"), value: data?.isWindows ? "Windows" : data?.isMac ? "macOS" : data?.isLinux ? "Linux" : t("values.other") },
       ]
     },
     {
-      title: "Mobile Forensics",
+      title: t("sections.mobile"),
       icon: <Smartphone className="text-primary w-5 h-5" />,
       items: [
-        { label: "Is Mobile", value: data?.isMobile ? "Yes" : "No" },
-        { label: "iOS Device", value: data?.isIos ? (data?.isIphone ? "iPhone" : "iPad") : "No" },
-        { label: "Android", value: data?.isAndroid ? "Yes" : "No" },
-        { label: "Legacy OS", value: data?.isBlackberry || data?.isWindowsMobile ? "Yes" : "No" },
+        { label: t("labels.isMobile"), value: data?.isMobile ? t("values.yes") : t("values.no") },
+        { label: t("labels.iosDevice"), value: data?.isIos ? (data?.isIphone ? "iPhone" : "iPad") : t("values.no") },
+        { label: t("labels.android"), value: data?.isAndroid ? t("values.yes") : t("values.no") },
+        { label: t("labels.legacyOs"), value: data?.isBlackberry || data?.isWindowsMobile ? t("values.yes") : t("values.no") },
       ]
     },
     {
-      title: "Hardware & Display",
+      title: t("sections.hardware"),
       icon: <Monitor className="text-primary w-5 h-5" />,
       items: [
-        { label: "Resolution", value: data?.currentResolution },
-        { label: "Available", value: data?.availableResolution },
-        { label: "Color Depth", value: `${data?.colorDepth} bit` },
-        { label: "DPI", value: `${data?.deviceXDPI}x${data?.deviceYDPI}` },
+        { label: t("labels.resolution"), value: data?.currentResolution },
+        { label: t("labels.available"), value: data?.availableResolution },
+        { label: t("labels.colorDepth"), value: `${data?.colorDepth} bit` },
+        { label: t("labels.dpi"), value: `${data?.deviceXDPI}x${data?.deviceYDPI}` },
       ]
     },
     {
-      title: "Storage & Security",
+      title: t("sections.storage"),
       icon: <ShieldCheck className="text-primary w-5 h-5" />,
       items: [
-        { label: "Cookies", value: data?.isCookie ? "Enabled" : "Disabled" },
-        { label: "Local Storage", value: data?.isLocalStorage ? "Available" : "No" },
-        { label: "Session Storage", value: data?.isSessionStorage ? "Available" : "No" },
-        { label: "Flash/Java", value: data?.isFlash || data?.isJava ? "Installed" : "None" },
+        { label: t("labels.cookies"), value: data?.isCookie ? t("values.enabled") : t("values.disabled") },
+        { label: t("labels.localStorage"), value: data?.isLocalStorage ? t("values.available") : t("values.no") },
+        { label: t("labels.sessionStorage"), value: data?.isSessionStorage ? t("values.available") : t("values.no") },
+        { label: t("labels.flashJava"), value: data?.isFlash || data?.isJava ? t("values.installed") : t("values.none") },
       ]
     },
     {
-      title: "Software Environment",
+      title: t("sections.software"),
       icon: <FileCode className="text-primary w-5 h-5" />,
       items: [
-        { label: "Browser", value: `${data?.browser} ${data?.browserVersion}` },
-        { label: "Engine", value: `${data?.engine} ${data?.engineVersion}` },
-        { label: "Lib Version", value: data?.softwareVersion },
-        { label: "User Agent", value: data?.userAgent, truncate: true },
+        { label: t("labels.browser"), value: `${data?.browser} ${data?.browserVersion}` },
+        { label: t("labels.engine"), value: `${data?.engine} ${data?.engineVersion}` },
+        { label: t("labels.libVersion"), value: data?.softwareVersion },
+        { label: t("labels.userAgent"), value: data?.userAgent, truncate: true },
       ]
     }
   ];
