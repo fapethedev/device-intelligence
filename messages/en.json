@@ -1,0 +1,233 @@
+{
+  "Manifest": {
+    "title": "Device Intelligence",
+    "description": "A full Clientjs and ip address fingerprinter based on what your device tel about you and itself",
+    "shortcuts": {
+      "scanner": {
+        "name": "Scanner",
+        "shortName": "Scan",
+        "description": "The fingerprinter scanner"
+      }
+    }
+  },
+  "Error": "Error",
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "scanBtn": "Start Scan"
+  },
+  "Footer": {
+    "description": "Advanced system intelligence and fingerprinting platform. Explore your browser's capabilities and detect fingerprint vectors.",
+    "platform": "Platform",
+    "resources": "Resources",
+    "home": "Home",
+    "scan": "ClientJS Scan",
+    "about": "About",
+    "documentation": "Documentation",
+    "lib": "ClientJS Lib",
+    "privacy": "Privacy Policy",
+    "rights": "All rights reserved.",
+    "createdWith": "Created with",
+    "by": "by"
+  },
+  "Home": {
+    "metadata": {
+      "title": "Home",
+      "description": "Explore the depths of your system. Detect fingerprinting vulnerabilities, analyze your hardware and visualize your digital identity in real time."
+    },
+    "hero": {
+      "badge": "Advanced System Intelligence",
+      "title": "Reveal your <span>Browser</span>'s Footprint",
+      "description": "Explore the depths of your system. Detect fingerprinting vulnerabilities, analyze your hardware and visualize your digital identity in real time.",
+      "scanBtn": "Scan Now"
+    },
+    "features": {
+      "deepScan": {
+        "title": "Deep Scan",
+        "desc": "Kernel, OS and software library analysis."
+      },
+      "network": {
+        "title": "Network Forensics",
+        "desc": "IP geolocation, ISP detection and network analysis."
+      },
+      "privacy": {
+        "title": "Privacy Audit",
+        "desc": "Fingerprinting vulnerability and cookie verification."
+      }
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "About",
+      "description": "Discover the history of Fingerprinter and learn more about its developer"
+    },
+    "hero": {
+      "title": "Our <span>History</span> & Vision",
+      "description": "FingerPrinter was born from a desire to democratize the understanding of online privacy and system intelligence through simple and powerful tools."
+    },
+    "why": {
+      "title": "Why FingerPrinter?",
+      "p1": "In an age where every digital interaction leaves a trace, understanding what your browser reveals about you has become essential. FingerPrinter uses <strong>heuristic analysis</strong> techniques to extract metadata that few users suspect.",
+      "p2": "Our mission is to provide a complete audit of your digital identity, from physical hardware (GPU, CPU) to software and network layers, while offering tools to export this data for security analysis purposes."
+    },
+    "utility": {
+      "title": "Project Utility",
+      "items": [
+        "Privacy audit for developers and researchers.",
+        "Fast forensic analysis of the client environment.",
+        "Education on modern fingerprinting vectors.",
+        "System compatibility report generation."
+      ]
+    },
+    "techStack": {
+      "title": "Technical Stack",
+      "description": "State-of-the-art technologies powering FingerPrinter."
+    },
+    "developer": {
+      "badge": "Lead Developer",
+      "description": "Passionate about Web development, I love building tools that make the complex accessible. DI - FingerPrinter is one of my projects blending polished UI/UX and deep technical exploration."
+    },
+    "changelog": {
+      "title": "GitHub Changelog",
+      "viewBtn": "View on GitHub",
+      "entries": [
+        {
+          "version": "v1.2.0",
+          "date": "April 2026",
+          "changes": [
+            "Leaflet integration for IP mapping",
+            "PDF/PNG export system",
+            "New Forensics interface"
+          ]
+        },
+        {
+          "version": "v1.1.0",
+          "date": "March 2026",
+          "changes": [
+            "Added IPAPI.co support",
+            "Advanced Framer Motion animations",
+            "Social sharing"
+          ]
+        },
+        {
+          "version": "v1.0.0",
+          "date": "February 2026",
+          "changes": [
+            "Initial launch with ClientJS",
+            "Basic OS and browser detection"
+          ]
+        }
+      ]
+    }
+  },
+  "Scanner": {
+    "metadata": {
+      "title": "Scanner",
+      "description": "This page illustrates the power of ClientJS for deep device identification and browser metadata extraction."
+    },
+    "hero": {
+      "title": "Device <span>Intelligence</span>",
+      "intelligence": "Intelligence",
+      "description": "This page illustrates the power of <code>ClientJS</code> for deep device identification and browser metadata extraction. Use this information for security, analysis or personalization purposes."
+    },
+    "header": {
+      "title": "System <span>Forensics</span>",
+      "description": "Deep kernel, Network and OS detection using heuristic analysis.",
+      "shareBtn": "Share",
+      "exportBtn": "Export",
+      "scanBtn": "Scan"
+    },
+    "share": {
+      "label": "Share the report",
+      "twitter": "On X (Twitter)",
+      "linkedin": "On LinkedIn",
+      "facebook": "On Facebook",
+      "copy": "Copy link"
+    },
+    "export": {
+      "label": "Output format",
+      "json": "JSON Data",
+      "markdown": "Markdown",
+      "text": "Plain Text",
+      "pdf": "PDF Document",
+      "image": "Image (PNG)"
+    },
+    "grid": {
+      "sections": {
+        "network": "Network & Connection",
+        "geo": "Geo Location",
+        "regional": "Regional Context",
+        "identity": "Identity & Fingerprint",
+        "os": "OS Deep Dive",
+        "mobile": "Mobile Forensics",
+        "hardware": "Hardware & Display",
+        "storage": "Storage & Security",
+        "software": "Software Environment"
+      },
+      "labels": {
+        "ip": "IP Address",
+        "provider": "Provider (ISP)",
+        "asn": "ASN",
+        "version": "IP Version",
+        "location": "Location",
+        "postal": "Postal Code",
+        "coordinates": "Coordinates",
+        "inEu": "In EU",
+        "capital": "Capital",
+        "currency": "Currency",
+        "callingCode": "Calling Code",
+        "languages": "Languages",
+        "deviceHash": "Device Hash",
+        "browserLanguage": "Browser Language",
+        "timezone": "Timezone",
+        "utcOffset": "UTC Offset",
+        "system": "System",
+        "architecture": "Architecture",
+        "desktopMode": "Desktop Mode",
+        "platform": "Platform",
+        "isMobile": "Is Mobile",
+        "iosDevice": "iOS Device",
+        "android": "Android",
+        "legacyOs": "Legacy OS",
+        "resolution": "Resolution",
+        "available": "Available",
+        "colorDepth": "Color Depth",
+        "dpi": "DPI",
+        "cookies": "Cookies",
+        "localStorage": "Local Storage",
+        "sessionStorage": "Session Storage",
+        "flashJava": "Flash/Java",
+        "browser": "Browser",
+        "engine": "Engine",
+        "libVersion": "Lib Version",
+        "userAgent": "User Agent"
+      },
+      "values": {
+        "yes": "Yes",
+        "no": "No",
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "available": "Available",
+        "installed": "Installed",
+        "none": "None",
+        "other": "Other"
+      },
+      "map": {
+        "btn": "Map",
+        "title": "Detected Location",
+        "description": "Geographic visualization of the IP {ip}"
+      }
+    },
+    "rawData": {
+      "title": "Raw Data Environment",
+      "description": "Comprehensive capability dumps for forensic auditing",
+      "tabs": {
+        "fonts": "Fonts",
+        "mime": "Mime",
+        "plugins": "Plugins",
+        "canvas": "Canvas"
+      },
+      "noMime": "No specialized MimeTypes found"
+    }
+  }
+}

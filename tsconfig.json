@@ -3,6 +3,7 @@
     "target": "ES2024",
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "allowJs": true,
+    "allowArbitraryExtensions": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

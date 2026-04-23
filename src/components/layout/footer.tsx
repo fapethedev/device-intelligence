@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
+import { useTranslations } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
 
 export function Footer() {
+  const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -31,8 +34,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm text-sm">
-              Plateforme d'intelligence système et de fingerprinting avancée.
-              Explorez les capacités de votre navigateur et détectez les vecteurs d'empreinte numérique.
+              {t("description")}
             </p>
             <div className="flex items-center gap-4">
               <Link href="https://github.com/fapethedev" target="_blank" className="p-2 bg-muted/50 shadow rounded-lg hover:text-primary transition-colors">
@@ -51,28 +53,28 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-bold uppercase text-xs tracking-widest text-primary">Plateforme</h4>
+            <h4 className="font-bold uppercase text-xs tracking-widest text-primary">{t("platform")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">Accueil</Link></li>
-              <li><Link href="/scanner" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">ClientJS Scan</Link></li>
-              <li><Link href="/about" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">À propos</Link></li>
+              <li><Link href="/" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("home")}</Link></li>
+              <li><Link href="/scanner" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("scan")}</Link></li>
+              <li><Link href="/about" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("about")}</Link></li>
             </ul>
           </div>
 
           <div className="space-y-4">
-            <h4 className="font-bold uppercase text-xs tracking-widest text-primary">Ressources</h4>
+            <h4 className="font-bold uppercase text-xs tracking-widest text-primary">{t("resources")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="http://clientjs.org/" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">Documentation</Link></li>
-              <li><Link href="https://github.com/jackspirou/clientjs" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">ClientJS Lib</Link></li>
-              <li><Link href="#" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="http://clientjs.org/" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("documentation")}</Link></li>
+              <li><Link href="https://github.com/jackspirou/clientjs" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("lib")}</Link></li>
+              <li><Link href="#" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("privacy")}</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-primary/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-          <p>© {currentYear} FingerPrinter. All rights reserved.</p>
+          <p>© {currentYear} FingerPrinter. {t("rights")}</p>
           <div className="flex items-center gap-1">
-            Created with <Heart size={12} className="text-red-500 fill-red-500 animate-pulse" /> by 
+            {t("createdWith")} <Heart size={12} className="text-red-500 fill-red-500 animate-pulse" /> {t("by")} 
             <Link 
               href="https://www.linkedin.com/in/abiola-fatigba-a0532a27b/"
               target="_blank"

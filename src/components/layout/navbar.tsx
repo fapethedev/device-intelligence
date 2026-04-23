@@ -2,21 +2,24 @@
 
 import React from "react";
 import Image from "next/image"
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Zap, Info, Scan } from "lucide-react";
+import { useTranslations } from "next-intl";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const navLinks = [
-  { href: "/", label: "Accueil", icon: Zap },
-  { href: "/about", label: "À propos", icon: Info },
-];
+import { Link, usePathname } from "@/i18n/navigation";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 
 export function Navbar() {
+  const t = useTranslations("Navbar");
   const pathname = usePathname();
   const { scrollY } = useScroll();
+
+  const navLinks = [
+    { href: "/", label: t("home"), icon: Zap },
+    { href: "/about", label: t("about"), icon: Info },
+  ];
   
   // Effects for the "resize on scroll" behavior
   const height = useTransform(scrollY, [0, 100], [80, 60]);
@@ -48,7 +51,7 @@ export function Navbar() {
             return (
               <Link
                 key={link.href}
-                href={link.href}
+                href={link.href as any}
                 className={cn(
                   "whitespace-nowrap relative px-4 py-1.5 text-sm font-medium transition-colors rounded-full flex items-center gap-2",
                   isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
@@ -68,11 +71,13 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <LanguageSwitcher />
+          
           <Link href="/scanner">
             <Button size="sm" className="gap-2 shadow-lg shadow-primary/20 hidden sm:flex">
               <Scan size={16} />
-              Lancer un Scan
+              {t("scanBtn")}
             </Button>
             <Button aria-label="scanner" size="icon" className="sm:hidden rounded-full">
                <Scan size={18} />

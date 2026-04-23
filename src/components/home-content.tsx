@@ -3,16 +3,21 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Cpu, Lock, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function HomeContent() {
+  const t = useTranslations("Home.features");
+
+  const features = [
+    { title: t("deepScan.title"), desc: t("deepScan.desc"), icon: Cpu },
+    { title: t("network.title"), desc: t("network.desc"), icon: Zap },
+    { title: t("privacy.title"), desc: t("privacy.desc"), icon: Lock }
+  ];
+
   return (
     <section className="container px-6 py-24 border-t border-primary/5">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {[
-          { title: "Deep Scan", desc: "Analyse du kernel, de l'OS et des bibliothèques logicielles.", icon: Cpu },
-          { title: "Network Forensics", desc: "Géolocalisation IP, détection ISP et analyse du réseau.", icon: Zap },
-          { title: "Privacy Audit", desc: "Vérification des vulnérabilités de fingerprinting et des cookies.", icon: Lock }
-        ].map((feature, i) => (
+        {features.map((feature, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
