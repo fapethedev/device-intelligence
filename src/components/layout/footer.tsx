@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/navigation";
+import { Link as IntLink } from "@/i18n/navigation";
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -19,7 +20,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
 
           <div className="md:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-2 group">
+            <IntLink href="/" className="flex items-center gap-2 group">
               <div className="relative h-12 w-12">
                 <Image
                   src="/icon-transparent.png"
@@ -32,7 +33,7 @@ export function Footer() {
               <span className="font-black text-xl tracking-tighter uppercase hidden sm:block">
                 Finger<span className="text-primary">Printer</span>
               </span>
-            </Link>
+            </IntLink>
             <p className="text-muted-foreground max-w-sm text-sm">
               {t("description")}
             </p>
@@ -55,9 +56,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-bold uppercase text-xs tracking-widest text-primary">{t("platform")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("home")}</Link></li>
-              <li><Link href="/scanner" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("scan")}</Link></li>
-              <li><Link href="/about" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("about")}</Link></li>
+              <li><IntLink href="/" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("home")}</IntLink></li>
+              <li><IntLink href="/scanner" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("scan")}</IntLink></li>
+              <li><IntLink href="/about" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("about")}</IntLink></li>
             </ul>
           </div>
 

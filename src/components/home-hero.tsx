@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Cpu, Fingerprint, Lock, Scan, Shield, ShieldCheck, Zap } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+import { Link as IntLink } from "@/i18n/navigation";
 
 
 export default function HomeHero() {
@@ -58,12 +59,12 @@ export default function HomeHero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-wrap justify-center gap-4 pt-4"
         >
-          <Link href="/scanner">
+          <IntLink href="/scanner">
             <Button size="lg" className="gap-2 h-14 px-8 text-lg font-bold group">
               <Scan className="group-hover:rotate-90 transition-transform" />
               {t("scanBtn")}
             </Button>
-          </Link>
+          </IntLink>
           <Link href="https://github.com/fapethedev/device-intelligence" target="_blank">
             <Button size="lg" variant="outline" className="gap-2 h-14 px-8 text-lg font-bold backdrop-blur-md">
               <FaGithub />
