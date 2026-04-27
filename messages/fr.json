@@ -127,7 +127,9 @@
     },
     "hero": {
       "title": "Device <span>Intelligence</span>",
-      "description": "Cette page illustre la puissance de <code>ClientJS</code> pour l'identification approfondie des appareils et l'extraction des métadonnées du navigateur. Utilisez ces informations à des fins de sécurité, d'analyse ou de personnalisation."
+      "description": "Cette page illustre la puissance de <code>ClientJS</code> pour l'identification approfondie des appareils et l'extraction des métadonnées du navigateur. Utilisez ces informations à des fins de sécurité, d'analyse ou de personnalisation.",
+      "installBtn": "Installer l'App",
+      "installIOS": "Pour installer : appuyez sur le bouton de partage, puis sur 'Sur l'écran d'accueil'"
     },
     "header": {
       "title": "Système d'analyse <span>Forensique</span>",
