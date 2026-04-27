@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 import ClientJsExplorer from "@/components/clientjs-explorer";
+import { PWAInstallButton } from "@/components/pwa-install-button";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Scanner.metadata");
@@ -29,6 +30,7 @@ export default async function ScannerPage() {
               code: (chunks) => <code className="bg-muted px-1 rounded-2xl">{chunks}</code>
             })}
           </p>
+          <PWAInstallButton />
         </div>
 
         <ClientJsExplorer />
