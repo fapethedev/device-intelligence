@@ -128,7 +128,9 @@
     "hero": {
       "title": "Device <span>Intelligence</span>",
       "intelligence": "Intelligence",
-      "description": "This page illustrates the power of <code>ClientJS</code> for deep device identification and browser metadata extraction. Use this information for security, analysis or personalization purposes."
+      "description": "This page illustrates the power of <code>ClientJS</code> for deep device identification and browser metadata extraction. Use this information for security, analysis or personalization purposes.",
+      "installBtn": "Install App",
+      "installIOS": "To install: tap the share button and then 'Add to Home Screen'"
     },
     "header": {
       "title": "System <span>Forensics</span>",
