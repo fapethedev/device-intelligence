@@ -1,6 +1,6 @@
 {
   "name": "di-fingerprinter",
-  "version": "v2026.3.1.0",
+  "version": "v2026.4.0.0",
   "type": "module",
   "private": true,
   "scripts": {
@@ -34,6 +34,7 @@
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.3",
     "react": "^19.2.4",
+    "react-cookie-consent": "^10.0.1",
     "react-day-picker": "^9.14.0",
     "react-dom": "^19.2.4",
     "react-icons": "^5.6.0",
@@ -55,7 +56,7 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "16.1.7",
-    "postcss": "^8",
+    "postcss": "8.5.10",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "serwist": "^9.5.7",
