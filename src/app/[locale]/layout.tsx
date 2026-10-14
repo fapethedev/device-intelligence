@@ -13,6 +13,8 @@ import { Footer } from "@/components/layout/footer"
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { routing } from "@/i18n/routing"
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export const metadata: Metadata = {
   title: {
@@ -98,6 +100,8 @@ export default async function RootLayout({
           </TooltipProvider>
         </ThemeProvider>
       </NextIntlClientProvider>
+      <Analytics/>
+      <SpeedInsights/>
       </body>
     </html>
   )
