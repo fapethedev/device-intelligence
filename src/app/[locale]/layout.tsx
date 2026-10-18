@@ -15,7 +15,6 @@ import { TooltipProvider } from "@/components/ui/tooltip"
 import { routing } from "@/i18n/routing"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/react"
-import Head from "next/head"
 import InsightsProvider from "@/components/InsightsProvider"
 
 export const metadata: Metadata = {
@@ -86,9 +85,6 @@ export default async function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", "font-mono", jetbrainsMono.variable, spaceGroteskHeading.variable)}
     >
-      <Head>
-        <InsightsProvider/>
-      </Head>
       <body className="flex flex-col min-h-screen">
       <NextIntlClientProvider
         locale={locale}
@@ -107,6 +103,7 @@ export default async function RootLayout({
       </NextIntlClientProvider>
       <Analytics/>
       <SpeedInsights/>
+      <InsightsProvider/>
       </body>
     </html>
   )
