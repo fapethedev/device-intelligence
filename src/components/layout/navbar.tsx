@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image"
 import { motion, useScroll, useTransform } from "motion/react";
-import { Zap, Info, Scan } from "lucide-react";
+import { Zap, Info, Scan, Fingerprint } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/", label: t("home"), icon: Zap },
+    { href: "/fingerprint", label: t("fingerprint"), icon: Fingerprint },
     { href: "/about", label: t("about"), icon: Info },
   ];
   

@@ -32,6 +32,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             }
         },
         {
+            url: `${BASE_URL}/fingerprint`,
+            lastModified: new Date(),
+            changeFrequency: "weekly",
+            priority: 0.9,
+            alternates: {
+                languages: {
+                    en: BASE_URL + (getPathname({ locale: "en", href: "/fingerprint" })),
+                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/fingerprint" })),
+                    es: BASE_URL + (getPathname({ locale: "es", href: "/fingerprint" }))
+                }
+            }
+        },
+        {
             url: `${BASE_URL}/about`,
             lastModified: new Date(),
             changeFrequency: "weekly",

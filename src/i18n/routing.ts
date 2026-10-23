@@ -11,5 +11,6 @@ export const routing = defineRouting({
       es: "/acerca-de"
     },
     "/scanner": "/scanner",
+    "/fingerprint": "/fingerprint",
   }
 });
