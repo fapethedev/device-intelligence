@@ -53,6 +53,12 @@ export function LanguageSwitcher() {
         >
           English
         </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => handleLanguageChange("es")}
+          className={locale === "es" ? "bg-primary" : ""}
+        >
+          Español
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

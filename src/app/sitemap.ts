@@ -13,7 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             alternates: {
                 languages: {
                     en: BASE_URL + (getPathname({ locale: "en", href: "/" })),
-                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/" }))
+                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/" })),
+                    es: BASE_URL + (getPathname({ locale: "es", href: "/" }))
                 }
             }
         },
@@ -25,7 +26,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             alternates: {
                 languages: {
                     en: BASE_URL + (getPathname({ locale: "en", href: "/scanner" })),
-                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/scanner" }))
+                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/scanner" })),
+                    es: BASE_URL + (getPathname({ locale: "es", href: "/scanner" }))
                 }
             }
         },
@@ -37,7 +39,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             alternates: {
                 languages: {
                     en: BASE_URL + (getPathname({ locale: "en", href: "/about" })),
-                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/about" }))
+                    fr: BASE_URL + (getPathname({ locale: "fr", href: "/about" })),
+                    es: BASE_URL + (getPathname({ locale: "es", href: "/about" }))
                 }
             }
         },

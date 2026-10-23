@@ -1,0 +1,235 @@
+{
+  "Manifest": {
+    "title": "Device Intelligence",
+    "description": "Una herramienta completa de fingerprinting ClientJS y dirección IP basada en lo que tu dispositivo revela sobre ti y sobre sí mismo",
+    "shortcuts": {
+      "scanner": {
+        "name": "Escáner",
+        "shortName": "Escanear",
+        "description": "El escáner de huella digital"
+      }
+    }
+  },
+  "Error": "Error",
+  "Navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "scanBtn": "Iniciar Escaneo"
+  },
+  "Footer": {
+    "description": "Plataforma avanzada de inteligencia de sistemas y fingerprinting. Explora las capacidades de tu navegador y detecta vectores de huella digital.",
+    "platform": "Plataforma",
+    "resources": "Recursos",
+    "home": "Inicio",
+    "scan": "ClientJS Scan",
+    "about": "Acerca de",
+    "documentation": "Documentación",
+    "lib": "ClientJS Lib",
+    "privacy": "Política de Privacidad",
+    "rights": "Todos los derechos reservados.",
+    "createdWith": "Creado con",
+    "by": "por"
+  },
+  "Home": {
+    "metadata": {
+      "title": "Inicio",
+      "description": "Explora las profundidades de tu sistema. Detecta vulnerabilidades de fingerprinting, analiza tu hardware y visualiza tu identidad digital en tiempo real."
+    },
+    "hero": {
+      "badge": "Inteligencia de Sistema Avanzada",
+      "title": "Revela la Huella de tu <span>Navegador</span>",
+      "description": "Explora las profundidades de tu sistema. Detecta vulnerabilidades de fingerprinting, analiza tu hardware y visualiza tu identidad digital en tiempo real.",
+      "scanBtn": "Escanear Ahora"
+    },
+    "features": {
+      "deepScan": {
+        "title": "Escaneo Profundo",
+        "desc": "Análisis del kernel, sistema operativo y librerías de software."
+      },
+      "network": {
+        "title": "Forense de Red",
+        "desc": "Geolocalización IP, detección de ISP y análisis de red."
+      },
+      "privacy": {
+        "title": "Auditoría de Privacidad",
+        "desc": "Verificación de vulnerabilidades de huella digital y cookies."
+      }
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "Acerca de",
+      "description": "Descubre la historia de Fingerprinter y conoce más sobre su desarrollador"
+    },
+    "hero": {
+      "title": "Nuestra <span>Historia</span> y Visión",
+      "description": "FingerPrinter nació del deseo de democratizar la comprensión de la privacidad en línea y la inteligencia del sistema mediante herramientas simples y potentes."
+    },
+    "why": {
+      "title": "¿Por qué FingerPrinter?",
+      "p1": "En una época donde cada interacción digital deja un rastro, comprender lo que tu navegador revela sobre ti se ha vuelto esencial. FingerPrinter utiliza técnicas de <strong>análisis heurístico</strong> para extraer metadatos que pocos usuarios sospechan.",
+      "p2": "Nuestra misión es proporcionar una auditoría completa de tu identidad digital, desde el hardware físico (GPU, CPU) hasta las capas de software y red, ofreciendo al mismo tiempo herramientas para exportar estos datos con fines de análisis de seguridad."
+    },
+    "utility": {
+      "title": "Utilidad del Proyecto",
+      "items": [
+        "Auditoría de privacidad para desarrolladores e investigadores.",
+        "Análisis forense rápido del entorno del cliente.",
+        "Educación sobre vectores modernos de fingerprinting.",
+        "Generación de informes de compatibilidad del sistema."
+      ]
+    },
+    "techStack": {
+      "title": "Stack Tecnológico",
+      "description": "Tecnologías de vanguardia que impulsan FingerPrinter."
+    },
+    "developer": {
+      "badge": "Desarrollador Principal",
+      "description": "Apasionado por el desarrollo web, me encanta crear herramientas que hagan accesible lo complejo. DI - FingerPrinter es uno de mis proyectos que combina UI/UX cuidada y exploración técnica profunda."
+    },
+    "changelog": {
+      "title": "Changelog de GitHub",
+      "viewBtn": "Ver en GitHub",
+      "entries": [
+        {
+          "version": "v1.2.0",
+          "date": "Abril de 2026",
+          "changes": [
+            "Integración de Leaflet para mapeo de IP",
+            "Sistema de exportación PDF/PNG",
+            "Nueva interfaz Forense"
+          ]
+        },
+        {
+          "version": "v1.1.0",
+          "date": "Marzo de 2026",
+          "changes": [
+            "Soporte para IPAPI.co añadido",
+            "Animaciones avanzadas de Framer Motion",
+            "Compartir en redes sociales"
+          ]
+        },
+        {
+          "version": "v1.0.0",
+          "date": "Febrero de 2026",
+          "changes": [
+            "Lanzamiento inicial con ClientJS",
+            "Detección básica de sistema operativo y navegador"
+          ]
+        }
+      ]
+    }
+  },
+  "Scanner": {
+    "metadata": {
+      "title": "Escáner",
+      "description": "Esta página ilustra la potencia de ClientJS para la identificación profunda de dispositivos y la extracción de metadatos del navegador."
+    },
+    "hero": {
+      "title": "Device <span>Intelligence</span>",
+      "intelligence": "Intelligence",
+      "description": "Esta página ilustra la potencia de <code>ClientJS</code> para la identificación profunda de dispositivos y la extracción de metadatos del navegador. Utiliza esta información con fines de seguridad, análisis o personalización.",
+      "installBtn": "Instalar App",
+      "installIOS": "Para instalar: toca el botón de compartir y luego 'Añadir a la pantalla de inicio'"
+    },
+    "header": {
+      "title": "Sistema de análisis <span>Forense</span>",
+      "description": "Detección profunda de kernel, red y sistema operativo mediante análisis heurístico.",
+      "shareBtn": "Compartir",
+      "exportBtn": "Exportar",
+      "scanBtn": "Escanear"
+    },
+    "share": {
+      "label": "Compartir el informe",
+      "twitter": "En X (Twitter)",
+      "linkedin": "En LinkedIn",
+      "facebook": "En Facebook",
+      "copy": "Copiar enlace"
+    },
+    "export": {
+      "label": "Formato de salida",
+      "json": "Datos JSON",
+      "markdown": "Markdown",
+      "text": "Texto plano",
+      "pdf": "Documento PDF",
+      "image": "Imagen (PNG)"
+    },
+    "grid": {
+      "sections": {
+        "network": "Red y Conexión",
+        "geo": "Geolocalización",
+        "regional": "Contexto Regional",
+        "identity": "Identidad y Huella",
+        "os": "Análisis del SO",
+        "mobile": "Forense Móvil",
+        "hardware": "Hardware y Pantalla",
+        "storage": "Almacenamiento y Seguridad",
+        "software": "Entorno de Software"
+      },
+      "labels": {
+        "ip": "Dirección IP",
+        "provider": "Proveedor (ISP)",
+        "asn": "ASN",
+        "version": "Versión IP",
+        "location": "Ubicación",
+        "postal": "Código Postal",
+        "coordinates": "Coordenadas",
+        "inEu": "En la UE",
+        "capital": "Capital",
+        "currency": "Moneda",
+        "callingCode": "Prefijo telefónico",
+        "languages": "Idiomas",
+        "deviceHash": "Hash del dispositivo",
+        "browserLanguage": "Idioma del navegador",
+        "timezone": "Zona horaria",
+        "utcOffset": "Desplazamiento UTC",
+        "system": "Sistema",
+        "architecture": "Arquitectura",
+        "desktopMode": "Modo Escritorio",
+        "platform": "Plataforma",
+        "isMobile": "Es Móvil",
+        "iosDevice": "Dispositivo iOS",
+        "android": "Android",
+        "legacyOs": "SO Legado",
+        "resolution": "Resolución",
+        "available": "Disponible",
+        "colorDepth": "Profundidad de color",
+        "dpi": "DPI",
+        "cookies": "Cookies",
+        "localStorage": "Almacenamiento Local",
+        "sessionStorage": "Almacenamiento de Sesión",
+        "flashJava": "Flash/Java",
+        "browser": "Navegador",
+        "engine": "Motor",
+        "libVersion": "Versión de Lib",
+        "userAgent": "User Agent"
+      },
+      "values": {
+        "yes": "Sí",
+        "no": "No",
+        "enabled": "Habilitado",
+        "disabled": "Deshabilitado",
+        "available": "Disponible",
+        "installed": "Instalado",
+        "none": "Ninguno",
+        "other": "Otro"
+      },
+      "map": {
+        "btn": "Mapa",
+        "title": "Ubicación Detectada",
+        "description": "Visualización geográfica de la IP {ip}"
+      }
+    },
+    "rawData": {
+      "title": "Entorno de Datos Brutos",
+      "description": "Volcados completos de capacidades para auditoría forense",
+      "tabs": {
+        "fonts": "Fuentes",
+        "mime": "Mime",
+        "plugins": "Plugins",
+        "canvas": "Canvas"
+      },
+      "noMime": "No se encontraron MimeTypes especializados"
+    }
+  }
+}
