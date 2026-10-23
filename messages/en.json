@@ -14,7 +14,8 @@
   "Navbar": {
     "home": "Home",
     "about": "About",
-    "scanBtn": "Start Scan"
+    "scanBtn": "Start Scan",
+    "fingerprint": "FingerprintJS"
   },
   "Footer": {
     "description": "Advanced system intelligence and fingerprinting platform. Explore your browser's capabilities and detect fingerprint vectors.",
@@ -28,7 +29,8 @@
     "privacy": "Privacy Policy",
     "rights": "All rights reserved.",
     "createdWith": "Created with",
-    "by": "by"
+    "by": "by",
+    "fingerprint": "Fingerprint Pro"
   },
   "Home": {
     "metadata": {
@@ -230,6 +232,72 @@
         "canvas": "Canvas"
       },
       "noMime": "No specialized MimeTypes found"
+    }
+  },
+  "Fingerprint": {
+    "metadata": {
+      "title": "Fingerprint Pro Tester",
+      "description": "Test and evaluate device identification using the official Fingerprint React SDK for Next.js."
+    },
+    "hero": {
+      "badge": "Official SDK Integration",
+      "title": "Fingerprint <span>Next.js</span> Test",
+      "description": "Evaluate device identification accuracy, fraud prevention signals and visitor tracking with the official Fingerprint React SDK."
+    },
+    "config": {
+      "title": "SDK Configuration",
+      "description": "Configure your Fingerprint Public API Key and region according to the Next.js Quickstart.",
+      "apiKeyLabel": "Public API Key",
+      "apiKeyPlaceholder": "Enter your Fingerprint public API key...",
+      "apiKeyHelp": "Get a free trial key from",
+      "envDetected": "Loaded from environment variable (NEXT_PUBLIC_FINGERPRINT_PUBLIC_KEY)",
+      "regionLabel": "Region",
+      "regionGlobal": "Global / US (default)",
+      "regionEu": "Europe (eu)",
+      "regionAp": "Asia-Pacific (ap)",
+      "extendedResult": "Extended Result (browser, OS, geolocation, incognito)",
+      "saveKey": "Apply Key",
+      "changeKey": "Change Key",
+      "noKeyAlert": "A Public API Key is required to initialize the Fingerprint SDK. You can get one from dashboard.fingerprint.com or enter your key below.",
+      "quickstartLink": "View Quickstart Documentation"
+    },
+    "actions": {
+      "identify": "Identify Device",
+      "identifying": "Identifying...",
+      "refresh": "Re-identify"
+    },
+    "results": {
+      "title": "Visitor Intelligence",
+      "visitorId": "Visitor ID",
+      "visitorIdDesc": "Persistent cross-browser and incognito identifier",
+      "requestId": "Request ID",
+      "requestIdDesc": "Unique event identifier for backend server validation",
+      "confidence": "Confidence Score",
+      "confidenceDesc": "Accuracy score of device identification",
+      "visitorFound": "Visitor Found",
+      "firstSeen": "First Seen",
+      "lastSeen": "Last Seen",
+      "incognito": "Incognito Mode",
+      "ipAddress": "IP Address",
+      "location": "Location",
+      "os": "Operating System",
+      "browser": "Browser",
+      "device": "Device",
+      "rawJson": "Raw Response Payload",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "yes": "Yes",
+      "no": "No",
+      "unknown": "Unknown"
+    },
+    "quickstartGuide": {
+      "title": "How it works in Next.js",
+      "step1": "1. Wrap with FingerprintProvider",
+      "step1Desc": "In your layout or client wrapper, pass your public API key and optional region.",
+      "step2": "2. Call useVisitorData()",
+      "step2Desc": "Use the hook in your client components to retrieve visitorId and requestId.",
+      "step3": "3. Verify Server-Side",
+      "step3Desc": "Send the requestId to your backend to query the Fingerprint Server API with your Secret Key for fraud analysis."
     }
   }
 }

@@ -58,6 +58,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><IntLink href="/" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("home")}</IntLink></li>
               <li><IntLink href="/scanner" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("scan")}</IntLink></li>
+              <li><IntLink href="/fingerprint" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("fingerprint")}</IntLink></li>
               <li><IntLink href="/about" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("about")}</IntLink></li>
             </ul>
           </div>
@@ -65,6 +66,7 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-bold uppercase text-xs tracking-widest text-primary">{t("resources")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link href="https://docs.fingerprint.com/" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">Fingerprint Docs</Link></li>
               <li><Link href="http://clientjs.org/" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("documentation")}</Link></li>
               <li><Link href="https://github.com/jackspirou/clientjs" target="_blank" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("lib")}</Link></li>
               <li><Link href="#" className="hover:underline hover:underline-offset-4 hover:text-primary transition-colors">{t("privacy")}</Link></li>
