@@ -278,8 +278,7 @@ export function FingerprintTester() {
   const [isConfigOpen, setIsConfigOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const saved = typeof window !== "undefined" ? sessionStorage.getItem("fp_public_api_key") : null;
-    const initial = envKey || saved || "";
+    const initial = envKey || "";
     setApiKey(initial);
     setInputKey(initial);
     if (!initial) {
@@ -291,9 +290,6 @@ export function FingerprintTester() {
     e.preventDefault();
     const cleanKey = inputKey.trim();
     setApiKey(cleanKey);
-    if (typeof window !== "undefined") {
-      sessionStorage.setItem("fp_public_api_key", cleanKey);
-    }
     toast.success("API Key updated");
     if (cleanKey) {
       setIsConfigOpen(false);
